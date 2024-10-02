@@ -25,7 +25,6 @@ pub struct SeedSettings {
     pub distance: f32,
     pub radius: f32,
     pub amount: i32,
-    pub exp_base: f32,
     pub exp_enabled: bool,
     pub color: Color,
     pub material_handle: Option<Handle<ColorMaterial>>,
@@ -42,7 +41,6 @@ impl Default for SeedSettings {
             color: Color::ORANGE,
             material_handle: None,
             mesh_handle: None,
-            exp_base: 1.0001_f32,
             exp_enabled: true,
         }
     }
@@ -58,7 +56,6 @@ impl SeedSettings {
             color: Color::hex("#0aa50e").unwrap(),
             material_handle: None,
             mesh_handle: None,
-            exp_base: 0.,
             exp_enabled: false,
         }
     }
