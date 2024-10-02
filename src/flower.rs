@@ -89,7 +89,7 @@ fn animate_flower_seeds(
     if !ui_state.animate {
         return;
     }
-    seed_settings.rotation = seed_settings.rotation + (ui_state.step_size * time.delta_seconds());
+    seed_settings.rotation += ui_state.step_size * time.delta_seconds();
     commands.run_system(reset_seeds.single().0);
 }
 
