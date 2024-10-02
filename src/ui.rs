@@ -1,19 +1,14 @@
 use crate::{
     constants::PHI,
-    flower::{FlowerSeed, ResetFlowerSeeds, SeedSettings},
-    petal::{spawn_petals, FlowerPetal, ResetFlowerPetals},
+    flower::{ResetFlowerSeeds, SeedSettings},
+    petal::ResetFlowerPetals,
     Callback,
 };
-use bevy::{
-    ecs::system::RunSystemOnce,
-    prelude::*,
-    sprite::{MaterialMesh2dBundle, Mesh2dHandle},
-};
+use bevy::prelude::*;
 use bevy_egui::{
-    egui::{self, InnerResponse, Response, ScrollArea, Ui},
+    egui::{self, ScrollArea},
     EguiContexts, EguiSettings,
 };
-use std::{f32::consts::PI, ops::Deref};
 
 pub struct UiPlugin;
 
