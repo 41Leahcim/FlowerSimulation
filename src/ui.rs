@@ -71,7 +71,7 @@ pub fn settings_ui(
     reset_petals: Query<&Callback, With<ResetFlowerPetals>>,
 ) {
     let mut changed = false;
-    let mode = ui_state.flower_mode.clone();
+    let mode = ui_state.flower_mode;
     egui::SidePanel::left("settings_ui")
         // .default_width(250.0)
         .resizable(true)
@@ -196,7 +196,7 @@ pub fn settings_ui(
                     }
                 }*/
                 if ui.button("Reset Settings").clicked() {
-                    match mode.clone() {
+                    match mode {
                         FlowerMode::Seed => {
                             *seed_settings = SeedSettings::default();
                         }
@@ -217,7 +217,7 @@ pub fn settings_ui(
         });
     if mode != ui_state.flower_mode {
         ui_state.animate = false;
-        match ui_state.flower_mode.clone() {
+        match ui_state.flower_mode {
             FlowerMode::Seed => {
                 *seed_settings = SeedSettings::default();
             }
