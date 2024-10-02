@@ -6,7 +6,7 @@ mod petal;
 mod setup;
 mod ui;
 
-use bevy::{ ecs::system::SystemId, prelude::*, window::PresentMode};
+use bevy::{ecs::system::SystemId, prelude::*, window::PresentMode};
 use bevy_egui::EguiPlugin;
 use bevy_pancam::PanCamPlugin;
 use bevy_vector_shapes::Shape2dPlugin;
@@ -34,7 +34,7 @@ fn main() {
         }))
         .add_plugins(Shape2dPlugin::default())
         //  .add_plugins(WorldInspectorPlugin::new())
-        .add_plugins(PanCamPlugin::default())
+        .add_plugins(PanCamPlugin)
         .add_plugins(UiPlugin)
         .add_plugins(SetupPlugin)
         .add_plugins(FlowerPetalPlugin)
