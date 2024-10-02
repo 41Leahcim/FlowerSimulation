@@ -157,13 +157,12 @@ pub fn settings_ui(
                 {
                     changed = true
                 }
-                if mode == FlowerMode::Seed {
-                    if ui
+                if mode == FlowerMode::Seed
+                    && ui
                         .checkbox(&mut seed_settings.exp_enabled, "Decreasing distance")
                         .changed()
-                    {
-                        changed = true;
-                    }
+                {
+                    changed = true;
                 }
                 if mode == FlowerMode::Petal {
                     ui.horizontal(|ui| {
