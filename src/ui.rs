@@ -28,7 +28,6 @@ pub struct UiState {
 }
 
 #[derive(Debug, PartialEq, Clone, Copy)]
-#[cfg_attr(feature = "serde", derive(serde::Deserialize, serde::Serialize))]
 pub enum FlowerMode {
     Seed,
     Petal,
