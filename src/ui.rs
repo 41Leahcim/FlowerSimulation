@@ -100,9 +100,9 @@ pub fn settings_ui(
                 ui.label("Math input");
                 let fr = ui.text_edit_singleline(&mut ui_state.fraction_content);
                 if fr.lost_focus() && fr.ctx.input(|i| i.key_pressed(egui::Key::Enter)) {
-                    if let Ok(value) = meval::eval_str(&ui_state.fraction_content) {
+                    if let Ok(value) = exmex::eval_str::<f32>(&ui_state.fraction_content) {
                         changed = true;
-                        seed_settings.rotation = value as f32;
+                        seed_settings.rotation = value;
                     }
                 }
                 ui.horizontal(|ui| {
